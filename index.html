@@ -1,530 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>DON GAZA BULLY SPOT | Demo Website</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-background:#070707;
-font-family:'Inter',sans-serif;
-color:white;
-overflow-x:hidden;
+  background:#030503;
+  color:#fff;
+  font-family:Inter,sans-serif;
+  overflow-x:hidden;
 }
-
 :root{
---gold:#d4af37;
---green:#0e5a37;
---dark:#070707;
+  --gold:#d6ad2f;
+  --gold2:#ffda63;
+  --green:#00a651;
+  --green2:#003d22;
+  --dark:#030503;
 }
-
-.demo-bar{
-background:linear-gradient(90deg,var(--gold),#f0d98a,var(--gold));
-color:#000;
-text-align:center;
-padding:12px;
-font-weight:700;
-letter-spacing:1px;
-font-size:.9rem;
+.demo{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:99;
+  background:linear-gradient(90deg,#d6ad2f,#ffda63,#d6ad2f);
+  color:#080808;
+  text-align:center;
+  padding:10px;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:1px;
 }
-
 .hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:80px 20px;
-position:relative;
-overflow:hidden;
-background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
-url('black-rhyno.jpg');
-background-size:cover;
-background-position:center;
+  min-height:100vh;
+  padding:120px 7% 80px;
+  position:relative;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:40px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 75% 45%,rgba(0,166,81,.45),transparent 35%),
+    radial-gradient(circle at 20% 20%,rgba(214,173,47,.25),transparent 28%),
+    linear-gradient(135deg,#020302 0%,#06180f 45%,#020302 100%);
 }
-
-.hero::before{
-content:'';
-position:absolute;
-width:800px;
-height:800px;
-background:radial-gradient(circle,var(--green),transparent 70%);
-opacity:.25;
-top:-250px;
-right:-150px;
+.hero:before{
+  content:"DON GAZA";
+  position:absolute;
+  font-family:Anton,sans-serif;
+  font-size:18vw;
+  color:rgba(255,255,255,.025);
+  top:17%;
+  left:-3%;
+  letter-spacing:8px;
+  white-space:nowrap;
 }
-
-.hero::after{
-content:'';
-position:absolute;
-width:700px;
-height:700px;
-background:radial-gradient(circle,var(--gold),transparent 70%);
-opacity:.08;
-bottom:-300px;
-left:-200px;
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(120deg,transparent 0 35%,rgba(0,166,81,.12) 35% 50%,transparent 50% 100%),
+    linear-gradient(60deg,transparent 0 48%,rgba(214,173,47,.12) 48% 52%,transparent 52% 100%);
+  pointer-events:none;
 }
-
-.hero-content{
-position:relative;
-z-index:2;
-max-width:1200px;
+.hero-text,.hero-art{position:relative;z-index:2}
+.badge{
+  display:inline-block;
+  border:1px solid rgba(214,173,47,.7);
+  color:var(--gold2);
+  padding:10px 18px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2px;
+  margin-bottom:22px;
+  background:rgba(0,0,0,.35);
 }
-
-.logo{
-width:180px;
-margin-bottom:25px;
+h1{
+  font-family:Anton,sans-serif;
+  font-size:clamp(4rem,9vw,9rem);
+  line-height:.88;
+  color:var(--gold);
+  text-shadow:0 0 30px rgba(214,173,47,.35);
+  letter-spacing:3px;
 }
-
-.hero h1{
-font-family:'Bebas Neue',sans-serif;
-font-size:8rem;
-line-height:.9;
-letter-spacing:4px;
-color:var(--gold);
-text-shadow:0 0 30px rgba(212,175,55,.4);
+.hero-text p{
+  margin-top:22px;
+  max-width:620px;
+  color:#d9d9d9;
+  font-size:1.12rem;
+  line-height:1.8;
 }
-
-.hero h2{
-font-size:1.3rem;
-font-weight:400;
-margin-top:15px;
-color:#d0d0d0;
-letter-spacing:3px;
-text-transform:uppercase;
+.cta{
+  margin-top:35px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
 }
-
-.hero-stud{
-margin-top:40px;
-}
-
-.hero-stud h3{
-font-family:'Bebas Neue',sans-serif;
-font-size:5rem;
-color:white;
-letter-spacing:3px;
-}
-
-.hero-stud p{
-font-size:1.1rem;
-color:#d4d4d4;
-letter-spacing:2px;
-}
-
-.buttons{
-margin-top:40px;
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
 .btn{
-padding:16px 38px;
-border:none;
-cursor:pointer;
-font-weight:700;
-letter-spacing:1px;
-text-transform:uppercase;
-transition:.3s;
+  text-decoration:none;
+  padding:16px 28px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  font-size:13px;
 }
-
-.btn-gold{
-background:var(--gold);
-color:black;
+.btn.gold{background:var(--gold);color:#050505}
+.btn.outline{border:1px solid var(--gold);color:#fff;background:rgba(0,0,0,.3)}
+.hero-card{
+  position:relative;
+  background:linear-gradient(145deg,rgba(0,166,81,.22),rgba(0,0,0,.7));
+  border:1px solid rgba(214,173,47,.45);
+  padding:20px;
+  box-shadow:0 0 60px rgba(0,166,81,.28);
 }
-
-.btn-dark{
-background:transparent;
-border:1px solid var(--gold);
-color:white;
+.hero-card img{
+  width:100%;
+  display:block;
+  border:1px solid rgba(255,255,255,.08);
 }
-
-.btn:hover{
-transform:translateY(-4px);
+.hero-card span{
+  position:absolute;
+  left:20px;
+  bottom:20px;
+  background:rgba(0,0,0,.78);
+  color:var(--gold2);
+  padding:12px 18px;
+  font-family:Bebas Neue,sans-serif;
+  font-size:1.7rem;
+  letter-spacing:2px;
 }
-
-section{
-padding:110px 8%;
+section{padding:95px 7%}
+.title{
+  font-family:Anton,sans-serif;
+  color:var(--gold);
+  font-size:clamp(3rem,6vw,6rem);
+  line-height:.9;
+  text-align:center;
+  letter-spacing:2px;
+  margin-bottom:18px;
 }
-
-.section-title{
-font-family:'Bebas Neue',sans-serif;
-font-size:4rem;
-letter-spacing:3px;
-text-align:center;
-margin-bottom:20px;
-color:var(--gold);
+.sub{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 55px;
+  color:#cfcfcf;
+  line-height:1.8;
 }
-
-.section-sub{
-text-align:center;
-max-width:800px;
-margin:auto;
-line-height:1.8;
-color:#bfbfbf;
-margin-bottom:60px;
-}
-
 .about{
-background:#0a0a0a;
+  background:
+    linear-gradient(180deg,#030503,#07180f);
 }
-
 .about-box{
-max-width:1000px;
-margin:auto;
-padding:50px;
-border:1px solid rgba(212,175,55,.2);
-background:rgba(255,255,255,.02);
-backdrop-filter:blur(8px);
+  max-width:1050px;
+  margin:auto;
+  border:1px solid rgba(214,173,47,.3);
+  background:linear-gradient(135deg,rgba(0,166,81,.18),rgba(255,255,255,.03));
+  padding:45px;
+  font-size:1.05rem;
+  line-height:1.9;
 }
-
 .demo-note{
-margin-top:30px;
-background:rgba(212,175,55,.1);
-border-left:4px solid var(--gold);
-padding:20px;
-font-weight:600;
+  margin-top:25px;
+  padding:18px;
+  background:rgba(214,173,47,.12);
+  border-left:5px solid var(--gold);
+  color:var(--gold2);
+  font-weight:900;
 }
-
-.stud-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
+.stud{
+  background:#030503;
 }
-
-.stud-grid img{
-width:100%;
-border-radius:20px;
+.stud-wrap{
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:45px;
+  align-items:center;
 }
-
+.stud-img{
+  border:1px solid rgba(214,173,47,.5);
+  background:radial-gradient(circle,rgba(0,166,81,.2),#020202);
+  padding:15px;
+}
+.stud-img img{width:100%;display:block}
+.stud-info h2{
+  font-family:Anton,sans-serif;
+  color:#fff;
+  font-size:clamp(3rem,6vw,6rem);
+  line-height:.9;
+}
 .stud-info h3{
-font-family:'Bebas Neue';
-font-size:4rem;
-color:var(--gold);
-margin-bottom:20px;
+  color:var(--gold2);
+  margin:18px 0;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
-
-.info-list{
-display:grid;
-gap:15px;
-margin-top:30px;
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:30px;
 }
-
-.info-item{
-padding:18px;
-background:#111;
-border-left:3px solid var(--gold);
+.stat{
+  background:linear-gradient(135deg,#081b11,#050505);
+  border:1px solid rgba(214,173,47,.22);
+  padding:18px;
+  font-weight:800;
 }
-
-.features{
-background:
-linear-gradient(180deg,#07120d,#070707);
+.productions{
+  background:
+    radial-gradient(circle at center,rgba(0,166,81,.25),transparent 45%),
+    linear-gradient(180deg,#07180f,#030503);
 }
-
+.prod-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+.prod{
+  position:relative;
+  border:1px solid rgba(214,173,47,.35);
+  overflow:hidden;
+  background:#050505;
+}
+.prod img{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+  display:block;
+}
+.prod span{
+  position:absolute;
+  left:18px;
+  bottom:18px;
+  background:#050505;
+  color:var(--gold2);
+  padding:10px 16px;
+  font-weight:900;
+  letter-spacing:1px;
+}
 .cards{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
-
 .card{
-background:#101010;
-padding:40px;
-border:1px solid rgba(212,175,55,.15);
-text-align:center;
+  background:linear-gradient(145deg,#07180f,#050505);
+  border:1px solid rgba(214,173,47,.25);
+  padding:35px;
+  text-align:center;
 }
-
 .card h3{
-font-family:'Bebas Neue';
-font-size:2rem;
-color:var(--gold);
-margin-bottom:10px;
+  font-family:Bebas Neue,sans-serif;
+  font-size:2.4rem;
+  color:var(--gold);
+  letter-spacing:2px;
+  margin-bottom:10px;
 }
-
-.productions-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-}
-
-.productions-grid img{
-width:100%;
-height:500px;
-object-fit:cover;
-border-radius:15px;
-}
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-
-.gallery-grid img{
-width:100%;
-height:350px;
-object-fit:cover;
-border-radius:12px;
-}
-
 .contact{
-text-align:center;
-background:
-linear-gradient(135deg,#08110c,#0e5a37);
+  text-align:center;
+  background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.78)),
+    url('hero.png');
+  background-size:cover;
+  background-position:center;
 }
-
 .contact h2{
-font-family:'Bebas Neue';
-font-size:5rem;
-color:white;
+  font-family:Anton,sans-serif;
+  font-size:clamp(3rem,7vw,7rem);
+  color:var(--gold);
 }
-
-.contact p{
-margin-top:15px;
-color:#dcdcdc;
+.contact p{margin:20px 0 35px;color:#ddd}
+footer{
+  text-align:center;
+  padding:35px;
+  background:#020202;
+  color:#aaa;
+  border-top:1px solid rgba(214,173,47,.2);
 }
-
-.footer{
-padding:50px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,.08);
-}
-
-.footer h3{
-font-family:'Bebas Neue';
-font-size:2rem;
-color:var(--gold);
-}
-
+footer strong{color:var(--gold)}
 @media(max-width:900px){
-
-.hero h1{
-font-size:4rem;
+  .hero,.stud-wrap,.prod-grid,.cards{grid-template-columns:1fr}
+  .hero{padding-top:100px;text-align:center}
+  .cta{justify-content:center}
+  .prod img{height:360px}
 }
-
-.hero-stud h3{
-font-size:3rem;
-}
-
-.stud-grid,
-cards,
-.productions-grid,
-.gallery-grid{
-grid-template-columns:1fr;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-.gallery-grid{
-grid-template-columns:1fr;
-}
-
-.productions-grid{
-grid-template-columns:1fr;
-}
-
-.section-title{
-font-size:3rem;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="demo-bar">
-DEMO WEBSITE DESIGN CREATED FOR DON GAZA BULLY SPOT
-</div>
+<div class="demo">DEMO WEBSITE CONCEPT — CREATED FOR DON GAZA BULLY SPOT</div>
 
-<section class="hero">
+<header class="hero">
+  <div class="hero-text">
+    <div class="badge">EXTREME POCKET & STANDARD BULLIES</div>
+    <h1>DON GAZA<br>BULLY SPOT</h1>
+    <p>
+      A premium kennel website concept built with a street luxury vibe —
+      dark green, gold, bold visuals, strong branding and a high-end bully presentation.
+    </p>
+    <div class="cta">
+      <a class="btn gold" href="#stud">View Featured Stud</a>
+      <a class="btn outline" href="#productions">View Productions</a>
+    </div>
+  </div>
 
-<div class="hero-content">
-
-<img src="logo.png" class="logo">
-
-<h1>DON GAZA<br>BULLY SPOT</h1>
-
-<h2>Extreme Pocket & Standard Bullies</h2>
-
-<div class="hero-stud">
-<h3>BLACK RHYNO</h3>
-<p>BONE • MASS • STRUCTURE</p>
-</div>
-
-<div class="buttons">
-<button class="btn btn-gold">View Stud</button>
-<button class="btn btn-dark">Productions</button>
-</div>
-
-</div>
-
-</section>
+  <div class="hero-art">
+    <div class="hero-card">
+      <img src="hero.png" alt="Don Gaza Bully Spot">
+      <span>DEMO PREVIEW</span>
+    </div>
+  </div>
+</header>
 
 <section class="about">
+  <h2 class="title">BUILT DIFFERENT</h2>
+  <p class="sub">
+    Don Gaza Bully Spot represents quality American Bullies with presence,
+    structure, bone, mass and a bold visual identity.
+  </p>
 
-<h2 class="section-title">BUILT DIFFERENT</h2>
+  <div class="about-box">
+    This demo landing page is designed to give the kennel a premium online presence:
+    stronger branding, better dog presentation, direct contact buttons, stud promotion
+    and a section to showcase productions.
+    <div class="demo-note">
+      ⚠ THIS IS ONLY A DEMO WEBSITE DESIGN. PHOTOS, TEXT AND DETAILS CAN BE CHANGED.
+    </div>
+  </div>
+</section>
 
-<div class="about-box">
+<section class="stud" id="stud">
+  <div class="stud-wrap">
+    <div class="stud-img">
+      <img src="stud.png" alt="Black Rhyno">
+    </div>
 
-<p>
-At Don Gaza Bully Spot we focus on producing high quality American Bullies with exceptional structure, heavy bone and breed consistency.
+    <div class="stud-info">
+      <h2>FEATURED<br>STUD</h2>
+      <h3>BLACK RHYNO</h3>
+      <p>
+        Presented as the main stud of this demo page, with a focus on bone,
+        mass, compact structure and bully type.
+      </p>
 
-Our vision is to create dogs that stand out through presence, substance and correct bully type while maintaining a strong breeding program.
-</p>
+      <div class="stats">
+        <div class="stat">Heavy Bone</div>
+        <div class="stat">Massive Structure</div>
+        <div class="stat">Pocket Bully</div>
+        <div class="stat">Stud Service</div>
+      </div>
 
-<div class="demo-note">
-⚠ THIS IS A DEMO WEBSITE CONCEPT CREATED TO SHOW HOW DON GAZA BULLY SPOT COULD LOOK ONLINE.
-</div>
+      <br><br>
+      <a class="btn gold" href="#contact">Contact For Stud</a>
+    </div>
+  </div>
+</section>
 
-</div>
+<section class="productions" id="productions">
+  <h2 class="title">PRODUCTIONS</h2>
+  <p class="sub">
+    Showcase offspring, past productions and upcoming prospects with clean,
+    bold visuals that make the kennel look established and professional.
+  </p>
 
+  <div class="prod-grid">
+    <div class="prod">
+      <img src="productions1.png" alt="Production 1">
+      <span>PRODUCTION 01</span>
+    </div>
+
+    <div class="prod">
+      <img src="productions2.png" alt="Production 2">
+      <span>PRODUCTION 02</span>
+    </div>
+  </div>
 </section>
 
 <section>
+  <h2 class="title">THE STANDARD</h2>
+  <p class="sub">
+    A kennel page should not look basic. It should sell confidence, quality and identity
+    before the customer even sends the first message.
+  </p>
 
-<h2 class="section-title">FEATURED STUD</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>BONE</h3>
+      <p>Strong structure and substance.</p>
+    </div>
 
-<div class="stud-grid">
+    <div class="card">
+      <h3>MASS</h3>
+      <p>Compact builds with presence.</p>
+    </div>
 
-<img src="black-rhyno.jpg">
-
-<div class="stud-info">
-
-<h3>BLACK RHYNO</h3>
-
-<p>
-One of the standout males representing the vision behind Don Gaza Bully Spot.
-</p>
-
-<div class="info-list">
-
-<div class="info-item">
-Breed: American Bully
-</div>
-
-<div class="info-item">
-Variety: Pocket
-</div>
-
-<div class="info-item">
-Color: Black
-</div>
-
-<div class="info-item">
-Heavy Bone • Massive Head • Compact Structure
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+    <div class="card">
+      <h3>QUALITY</h3>
+      <p>A polished brand presentation.</p>
+    </div>
+  </div>
 </section>
 
-<section class="features">
-
-<h2 class="section-title">WHY DON GAZA</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>BONE</h3>
-<p>Powerful structure with exceptional substance.</p>
-</div>
-
-<div class="card">
-<h3>MASS</h3>
-<p>Compact builds carrying impressive muscle and presence.</p>
-</div>
-
-<div class="card">
-<h3>QUALITY</h3>
-<p>Focused breeding program built around consistency.</p>
-</div>
-
-</div>
-
+<section class="contact" id="contact">
+  <h2>LET'S TALK BULLIES</h2>
+  <p>Instagram: @one_dongazabullies</p>
+  <a class="btn gold" href="https://www.instagram.com/one_dongazabullies/" target="_blank">Message On Instagram</a>
 </section>
 
-<section>
-
-<h2 class="section-title">PRODUCTIONS</h2>
-
-<p class="section-sub">
-Producing the next generation with the same commitment to quality, structure and bully type.
-</p>
-
-<div class="productions-grid">
-
-<img src="productions1.jpg">
-
-<img src="productions2.jpg">
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="section-title">GALLERY</h2>
-
-<div class="gallery-grid">
-
-<img src="gallery1.jpg">
-<img src="gallery2.jpg">
-<img src="gallery3.jpg">
-<img src="gallery4.jpg">
-<img src="gallery5.jpg">
-<img src="gallery6.jpg">
-
-</div>
-
-</section>
-
-<section class="contact">
-
-<h2>LET'S TALK BULLIES</h2>
-
-<p>@one_dongazabullies</p>
-
-<br><br>
-
-<button class="btn btn-gold">
-MESSAGE US
-</button>
-
-</section>
-
-<footer class="footer">
-
-<h3>DON GAZA BULLY SPOT</h3>
-
-<p>Extreme Pocket & Standard Bullies</p>
-
-<br>
-
-<p style="opacity:.7;">
-Demo Website Concept
-</p>
-
+<footer>
+  <strong>DON GAZA BULLY SPOT</strong><br>
+  Demo Website Concept
 </footer>
 
 </body>
