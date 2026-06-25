@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,6 @@ body{
   --gold:#d6ad2f;
   --gold2:#ffda63;
   --green:#00a651;
-  --green2:#003d22;
   --dark:#030503;
 }
 .demo{
@@ -40,11 +40,11 @@ body{
 .hero{
   min-height:100vh;
   padding:120px 7% 80px;
-  position:relative;
   display:grid;
   grid-template-columns:1.05fr .95fr;
   align-items:center;
   gap:40px;
+  position:relative;
   overflow:hidden;
   background:
     radial-gradient(circle at 75% 45%,rgba(0,166,81,.45),transparent 35%),
@@ -57,19 +57,10 @@ body{
   font-family:Anton,sans-serif;
   font-size:18vw;
   color:rgba(255,255,255,.025);
-  top:17%;
+  top:18%;
   left:-3%;
   letter-spacing:8px;
   white-space:nowrap;
-}
-.hero:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(120deg,transparent 0 35%,rgba(0,166,81,.12) 35% 50%,transparent 50% 100%),
-    linear-gradient(60deg,transparent 0 48%,rgba(214,173,47,.12) 48% 52%,transparent 52% 100%);
-  pointer-events:none;
 }
 .hero-text,.hero-art{position:relative;z-index:2}
 .badge{
@@ -94,7 +85,7 @@ h1{
 .hero-text p{
   margin-top:22px;
   max-width:620px;
-  color:#d9d9d9;
+  color:#e7e7e7;
   font-size:1.12rem;
   line-height:1.8;
 }
@@ -111,6 +102,7 @@ h1{
   letter-spacing:1px;
   text-transform:uppercase;
   font-size:13px;
+  display:inline-block;
 }
 .btn.gold{background:var(--gold);color:#050505}
 .btn.outline{border:1px solid var(--gold);color:#fff;background:rgba(0,0,0,.3)}
@@ -149,14 +141,13 @@ section{padding:95px 7%}
 }
 .sub{
   text-align:center;
-  max-width:760px;
+  max-width:800px;
   margin:0 auto 55px;
-  color:#cfcfcf;
+  color:#d8d8d8;
   line-height:1.8;
 }
 .about{
-  background:
-    linear-gradient(180deg,#030503,#07180f);
+  background:linear-gradient(180deg,#030503,#07180f);
 }
 .about-box{
   max-width:1050px;
@@ -164,8 +155,9 @@ section{padding:95px 7%}
   border:1px solid rgba(214,173,47,.3);
   background:linear-gradient(135deg,rgba(0,166,81,.18),rgba(255,255,255,.03));
   padding:45px;
-  font-size:1.05rem;
+  font-size:1.08rem;
   line-height:1.9;
+  text-align:center;
 }
 .demo-note{
   margin-top:25px;
@@ -174,69 +166,77 @@ section{padding:95px 7%}
   border-left:5px solid var(--gold);
   color:var(--gold2);
   font-weight:900;
+  text-align:left;
 }
-.stud{
+.split{
   background:#030503;
 }
-.stud-wrap{
+.split-wrap{
   display:grid;
   grid-template-columns:.95fr 1.05fr;
   gap:45px;
   align-items:center;
 }
-.stud-img{
+.split-img{
   border:1px solid rgba(214,173,47,.5);
   background:radial-gradient(circle,rgba(0,166,81,.2),#020202);
   padding:15px;
 }
-.stud-img img{width:100%;display:block}
-.stud-info h2{
+.split-img img{
+  width:100%;
+  display:block;
+}
+.split-info h2{
   font-family:Anton,sans-serif;
   color:#fff;
   font-size:clamp(3rem,6vw,6rem);
   line-height:.9;
 }
-.stud-info h3{
+.split-info h3{
   color:var(--gold2);
   margin:18px 0;
   letter-spacing:3px;
   text-transform:uppercase;
 }
-.stats{
+.split-info p{
+  color:#e8e8e8;
+  line-height:1.8;
+}
+.info-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:14px;
   margin-top:30px;
 }
-.stat{
+.info-pill{
   background:linear-gradient(135deg,#081b11,#050505);
   border:1px solid rgba(214,173,47,.22);
   padding:18px;
   font-weight:800;
 }
-.productions{
+.females{
   background:
-    radial-gradient(circle at center,rgba(0,166,81,.25),transparent 45%),
-    linear-gradient(180deg,#07180f,#030503);
+    radial-gradient(circle at 25% 45%,rgba(214,173,47,.13),transparent 35%),
+    linear-gradient(180deg,#030503,#07180f);
 }
-.prod-grid{
+.photo-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:25px;
 }
-.prod{
+.photo-card{
   position:relative;
   border:1px solid rgba(214,173,47,.35);
   overflow:hidden;
   background:#050505;
 }
-.prod img{
+.photo-card img{
   width:100%;
   height:520px;
   object-fit:cover;
   display:block;
 }
-.prod span{
+.photo-card span{
   position:absolute;
   left:18px;
   bottom:18px;
@@ -246,28 +246,37 @@ section{padding:95px 7%}
   font-weight:900;
   letter-spacing:1px;
 }
-.cards{
+.productions{
+  background:
+    radial-gradient(circle at center,rgba(0,166,81,.22),transparent 45%),
+    linear-gradient(180deg,#07180f,#030503);
+}
+.gallery{
+  background:#030503;
+}
+.gallery-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
 }
-.card{
-  background:linear-gradient(145deg,#07180f,#050505);
-  border:1px solid rgba(214,173,47,.25);
-  padding:35px;
-  text-align:center;
+.gallery-card{
+  border:1px solid rgba(214,173,47,.3);
+  background:#050505;
+  overflow:hidden;
 }
-.card h3{
-  font-family:Bebas Neue,sans-serif;
-  font-size:2.4rem;
-  color:var(--gold);
-  letter-spacing:2px;
-  margin-bottom:10px;
+.gallery-card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  display:block;
+  transition:.35s ease;
 }
+.gallery-card:hover img{transform:scale(1.06)}
 .contact{
   text-align:center;
+  position:relative;
   background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.78)),
+    linear-gradient(rgba(0,0,0,.76),rgba(0,0,0,.82)),
     url('hero.png');
   background-size:cover;
   background-position:center;
@@ -277,7 +286,49 @@ section{padding:95px 7%}
   font-size:clamp(3rem,7vw,7rem);
   color:var(--gold);
 }
-.contact p{margin:20px 0 35px;color:#ddd}
+.contact-box{
+  max-width:850px;
+  margin:30px auto 0;
+  padding:35px;
+  border:1px solid rgba(214,173,47,.35);
+  background:rgba(0,0,0,.55);
+}
+.contact-row{
+  margin:14px 0;
+  color:#e8e8e8;
+  font-size:1.05rem;
+}
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+.social-btn{
+  text-decoration:none;
+  color:#050505;
+  background:var(--gold);
+  padding:15px 24px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.icon{
+  width:22px;
+  height:22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#050505;
+  color:var(--gold2);
+  font-size:13px;
+  font-weight:900;
+}
 footer{
   text-align:center;
   padding:35px;
@@ -286,11 +337,19 @@ footer{
   border-top:1px solid rgba(214,173,47,.2);
 }
 footer strong{color:var(--gold)}
-@media(max-width:900px){
-  .hero,.stud-wrap,.prod-grid,.cards{grid-template-columns:1fr}
+
+@media(max-width:1000px){
+  .hero,.split-wrap,.photo-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
   .hero{padding-top:100px;text-align:center}
   .cta{justify-content:center}
-  .prod img{height:360px}
+}
+@media(max-width:650px){
+  section{padding:75px 6%}
+  .photo-card img{height:350px}
+  .gallery-grid{grid-template-columns:1fr}
+  .gallery-card img{height:360px}
+  .info-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -301,15 +360,15 @@ footer strong{color:var(--gold)}
 
 <header class="hero">
   <div class="hero-text">
-    <div class="badge">EXTREME POCKET & STANDARD BULLIES</div>
+    <div class="badge">AMERICAN BULLY KENNEL</div>
     <h1>DON GAZA<br>BULLY SPOT</h1>
     <p>
       A premium kennel website concept built with a street luxury vibe —
-      dark green, gold, bold visuals, strong branding and a high-end bully presentation.
+      dark green, gold, bold visuals and a high-end bully presentation.
     </p>
     <div class="cta">
-      <a class="btn gold" href="#stud">View Featured Stud</a>
-      <a class="btn outline" href="#productions">View Productions</a>
+      <a class="btn gold" href="#studs">View Studs</a>
+      <a class="btn outline" href="#contact">Contact</a>
     </div>
   </div>
 
@@ -322,45 +381,62 @@ footer strong{color:var(--gold)}
 </header>
 
 <section class="about">
-  <h2 class="title">BUILT DIFFERENT</h2>
+  <h2 class="title">ABOUT DON GAZA</h2>
   <p class="sub">
-    Don Gaza Bully Spot represents quality American Bullies with presence,
-    structure, bone, mass and a bold visual identity.
+    Based in Brodheadsville, Pennsylvania, Don Gaza Bully Spot showcases American Bullies with strong presence, structure and a bold kennel identity.
   </p>
 
   <div class="about-box">
-    This demo landing page is designed to give the kennel a premium online presence:
-    stronger branding, better dog presentation, direct contact buttons, stud promotion
-    and a section to showcase productions.
+    This demo landing page is designed to give the kennel a cleaner and stronger online presence:
+    featured studs, females, productions, kennel gallery and direct contact links for social media.
     <div class="demo-note">
       ⚠ THIS IS ONLY A DEMO WEBSITE DESIGN. PHOTOS, TEXT AND DETAILS CAN BE CHANGED.
     </div>
   </div>
 </section>
 
-<section class="stud" id="stud">
-  <div class="stud-wrap">
-    <div class="stud-img">
-      <img src="stud.png" alt="Black Rhyno">
+<section class="split" id="studs">
+  <div class="split-wrap">
+    <div class="split-img">
+      <img src="stud.png" alt="Don Gaza Stud">
     </div>
 
-    <div class="stud-info">
-      <h2>FEATURED<br>STUD</h2>
+    <div class="split-info">
+      <h2>STUDS</h2>
       <h3>BLACK RHYNO</h3>
       <p>
-        Presented as the main stud of this demo page, with a focus on bone,
-        mass, compact structure and bully type.
+        Featured stud presentation for Don Gaza Bully Spot. More details, pedigree information
+        and breeding availability can be added once confirmed by the kennel.
       </p>
 
-      <div class="stats">
-        <div class="stat">Heavy Bone</div>
-        <div class="stat">Massive Structure</div>
-        <div class="stat">Pocket Bully</div>
-        <div class="stat">Stud Service</div>
+      <div class="info-grid">
+        <div class="info-pill">Featured Stud</div>
+        <div class="info-pill">American Bully</div>
+        <div class="info-pill">Breeding Info Available</div>
+        <div class="info-pill">Contact For Details</div>
       </div>
 
       <br><br>
-      <a class="btn gold" href="#contact">Contact For Stud</a>
+      <a class="btn gold" href="#contact">Contact For Stud Info</a>
+    </div>
+  </div>
+</section>
+
+<section class="females" id="females">
+  <h2 class="title">FEMALES</h2>
+  <p class="sub">
+    Female lineup and future producers from the Don Gaza Bully Spot program.
+  </p>
+
+  <div class="photo-grid">
+    <div class="photo-card">
+      <img src="female1.png" alt="Don Gaza Female 1">
+      <span>FEMALE 01</span>
+    </div>
+
+    <div class="photo-card">
+      <img src="female2.png" alt="Don Gaza Female 2">
+      <span>FEMALE 02</span>
     </div>
   </div>
 </section>
@@ -372,54 +448,59 @@ footer strong{color:var(--gold)}
     bold visuals that make the kennel look established and professional.
   </p>
 
-  <div class="prod-grid">
-    <div class="prod">
+  <div class="photo-grid">
+    <div class="photo-card">
       <img src="productions1.png" alt="Production 1">
       <span>PRODUCTION 01</span>
     </div>
 
-    <div class="prod">
+    <div class="photo-card">
       <img src="productions2.png" alt="Production 2">
       <span>PRODUCTION 02</span>
     </div>
   </div>
 </section>
 
-<section>
-  <h2 class="title">THE STANDARD</h2>
+<section class="gallery" id="gallery">
+  <h2 class="title">KENNEL GALLERY</h2>
   <p class="sub">
-    A kennel page should not look basic. It should sell confidence, quality and identity
-    before the customer even sends the first message.
+    More from Don Gaza Bully Spot.
   </p>
 
-  <div class="cards">
-    <div class="card">
-      <h3>BONE</h3>
-      <p>Strong structure and substance.</p>
-    </div>
-
-    <div class="card">
-      <h3>MASS</h3>
-      <p>Compact builds with presence.</p>
-    </div>
-
-    <div class="card">
-      <h3>QUALITY</h3>
-      <p>A polished brand presentation.</p>
-    </div>
+  <div class="gallery-grid">
+    <div class="gallery-card"><img src="gallery1.png" alt="Don Gaza Gallery 1"></div>
+    <div class="gallery-card"><img src="gallery2.png" alt="Don Gaza Gallery 2"></div>
+    <div class="gallery-card"><img src="gallery3.png" alt="Don Gaza Gallery 3"></div>
+    <div class="gallery-card"><img src="gallery4.png" alt="Don Gaza Gallery 4"></div>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <h2>LET'S TALK BULLIES</h2>
-  <p>Instagram: @one_dongazabullies</p>
-  <a class="btn gold" href="https://www.instagram.com/one_dongazabullies/" target="_blank">Message On Instagram</a>
+
+  <div class="contact-box">
+    <div class="contact-row"><strong>Location:</strong> Brodheadsville, Pennsylvania 18322</div>
+    <div class="contact-row"><strong>Instagram:</strong> @one_dongazabullies</div>
+    <div class="contact-row"><strong>Facebook:</strong> One Don Gaza Bullies</div>
+
+    <div class="socials">
+      <a class="social-btn" href="https://www.instagram.com/one_dongazabullies/" target="_blank">
+        <span class="icon">IG</span> Message On Instagram
+      </a>
+
+      <a class="social-btn" href="https://www.facebook.com/search/top?q=One%20Don%20Gaza%20Bullies" target="_blank">
+        <span class="icon">FB</span> Visit Facebook
+      </a>
+    </div>
+  </div>
 </section>
 
 <footer>
   <strong>DON GAZA BULLY SPOT</strong><br>
+  Brodheadsville, Pennsylvania<br>
   Demo Website Concept
 </footer>
 
 </body>
 </html>
+```
